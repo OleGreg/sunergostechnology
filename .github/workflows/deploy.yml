@@ -1,0 +1,55 @@
+name: SunergosTechnology CD
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    # Update and install dependencies in the root
+    - name: Update and Install Root Dependencies
+      run: |
+        composer update
+        composer install -o
+    # Navigate into the theme directory and run additional steps
+    - name: Set Up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '22.11.0'
+
+    - name: Install Theme Dependencies
+      working-directory: web/app/themes/sunergos-wordpress
+      run: |
+        # Install Node dependencies
+        npm install
+        
+        # Install PHP dependencies
+        composer update
+        composer install
+        # Build theme assets
+        yarn build
+    # Sync files to the remote server
+    - name: Sync
+      env:
+        dest: 'root@sunergostechnology.com:/var/www/sunergostechnology.com'
+      run: |
+        echo "${{secrets.DO_SSH_PRIVATE_KEY}}" > deploy_key
+        chmod 600 ./deploy_key
+        rsync -chav --delete \
+        -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' \
+        --exclude /deploy_key \
+        --exclude /.git/ \
+        --exclude /.github/ \
+        --exclude /node_modules/ \
+        --exclude .env \
+        --exclude web/app/uploads \
+        ./ ${{env.dest}}
+    # Change ownership of deployed files to the correct user/group
+    - name: Change Ownership of Deployed Files
+      run: |
+        ssh -i ./deploy_key -o StrictHostKeyChecking=no root@sunergostechnology.com "chown -R www-data:www-data /var/www/sunergostechnology.com"
