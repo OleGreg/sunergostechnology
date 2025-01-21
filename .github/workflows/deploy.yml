@@ -11,28 +11,23 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    # Update and install dependencies in the root
-    - name: Update and Install Root Dependencies
-      run: |
-        composer update
-        composer install -o
-    # Navigate into the theme directory and run additional steps
+    # Install dependencies and clean project
     - name: Set Up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '22.11.0'
+        node-version: '20.x'  # Use a stable Node.js version
 
-    - name: Install Theme Dependencies
+    - name: Install and Build Theme
       working-directory: web/app/themes/sunergos-wordpress
       run: |
-        # Install Node dependencies
         npm install
-        
-        # Install PHP dependencies
-        composer update
-        composer install
-        # Build theme assets
-        yarn build
+        npm run clean  # Ensure old artifacts are removed
+        yarn build  # Run the build step
+        if [ $? -ne 0 ]; then
+          echo "Build failed. Debugging logs:" && cat logs/build.log
+          exit 1
+        fi
+
     # Sync files to the remote server
     - name: Sync
       env:
@@ -49,7 +44,6 @@ jobs:
         --exclude .env \
         --exclude web/app/uploads \
         ./ ${{env.dest}}
-    # Change ownership of deployed files to the correct user/group
     - name: Change Ownership of Deployed Files
       run: |
         ssh -i ./deploy_key -o StrictHostKeyChecking=no root@sunergostechnology.com "chown -R www-data:www-data /var/www/sunergostechnology.com"
