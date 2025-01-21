@@ -32,7 +32,6 @@ jobs:
         composer update
         composer install
         # Build theme assets
-        yarn install --production
         yarn build
     # Sync files to the remote server
     - name: Sync
