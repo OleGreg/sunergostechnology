@@ -22,6 +22,10 @@
 
 .wp-block-group {
   @apply container mb-20;
+
+  &.service-hero-container {
+    @apply max-md:mb-10;
+  }
 }
 
 .wp-block-group-is-layout-grid {
