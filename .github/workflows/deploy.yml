@@ -27,14 +27,14 @@ jobs:
       run: |
         # Install Node dependencies
         rm -rf node_modules package-lock.json yarn.lock
-        npm install
+        npm install yarn
         
         # Install PHP dependencies
         composer update
         composer install
         # Build theme assets
         rm -rf yarn.lock
-        yarn install
+        yarn
         yarn build
     # Sync files to the remote server
     - name: Sync
