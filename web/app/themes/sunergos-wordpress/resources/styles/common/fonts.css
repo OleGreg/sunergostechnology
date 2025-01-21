@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Cormorant';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('@fonts/Cormorant-VariableFont_wght.ttf') format('truetype');
+}
+/*
+@font-face {
+  font-display: swap;
+  font-family: 'Asap';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@fonts/Asap-VariableFont_wdth,wght.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Asap';
+  font-style: italic;
+  font-weight: 400;
+  src: url('@fonts/Asap-Italic-VariableFont_wdth,wght.woff2') format('woff2');
+}
+
+Cormorant-VariableFont_wght.ttf */

@@ -1,0 +1,17 @@
+.breadcrumbs {
+  @apply flex flex-row gap-x-2;
+
+  span {
+    @apply text-twilightblue hover:text-darklavender;
+
+    &.delimeter {
+      @apply hover:text-twilightblue;
+    }
+  }
+
+  .current {
+    span {
+      @apply text-darklavender font-normal no-underline;
+    }
+  }
+}

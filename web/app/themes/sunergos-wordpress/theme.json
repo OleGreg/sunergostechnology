@@ -1,0 +1,181 @@
+{
+  "__generated__": "⚠️ This file is generated. Do not edit.",
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "background": {
+      "backgroundImage": true
+    },
+    "color": {
+      "custom": false,
+      "customDuotone": false,
+      "customGradient": false,
+      "defaultDuotone": false,
+      "defaultGradients": false,
+      "defaultPalette": false,
+      "duotone": [],
+      "palette": [
+        {
+          "color": "#26619c",
+          "name": "Mediterraneanblue",
+          "slug": "mediterraneanblue"
+        },
+        {
+          "color": "#123456",
+          "name": "Twilightblue",
+          "slug": "twilightblue"
+        },
+        {
+          "color": "#f5f5f5",
+          "name": "Seashell",
+          "slug": "seashell"
+        },
+        {
+          "color": "#89619e",
+          "name": "Lavender",
+          "slug": "lavender"
+        },
+        {
+          "color": "#664875",
+          "name": "Darklavender",
+          "slug": "darklavender"
+        },
+        {
+          "color": "#858ab5",
+          "name": "Bluecharcoal",
+          "slug": "bluecharcoal"
+        },
+        {
+          "color": "#f5a623",
+          "name": "Honeyorange",
+          "slug": "honeyorange"
+        },
+        {
+          "color": "#fff",
+          "name": "White",
+          "slug": "white"
+        },
+        {
+          "color": "transparent",
+          "name": "Transparent",
+          "slug": "transparent"
+        },
+        {
+          "color": "currentcolor",
+          "name": "Current",
+          "slug": "current"
+        }
+      ]
+    },
+    "custom": {
+      "spacing": {},
+      "typography": {
+        "font-size": {},
+        "line-height": {}
+      }
+    },
+    "spacing": {
+      "padding": true,
+      "units": [
+        "px",
+        "%",
+        "em",
+        "rem",
+        "vw",
+        "vh"
+      ]
+    },
+    "typography": {
+      "customFontSize": false,
+      "fontFamilies": [
+        {
+          "fontFamily": "sans-serif",
+          "name": "Sans-serif",
+          "slug": "sans"
+        },
+        {
+          "fontFamily": "\"Cormorant\", serif",
+          "name": "\"Cormorant\"",
+          "slug": "serif"
+        },
+        {
+          "fontFamily": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+          "name": "Ui-monospace",
+          "slug": "mono"
+        }
+      ],
+      "fontSizes": [
+        {
+          "name": "xs",
+          "size": "0.75rem",
+          "slug": "xs"
+        },
+        {
+          "name": "sm",
+          "size": "0.875rem",
+          "slug": "sm"
+        },
+        {
+          "name": "base",
+          "size": "1rem",
+          "slug": "base"
+        },
+        {
+          "name": "lg",
+          "size": "1.125rem",
+          "slug": "lg"
+        },
+        {
+          "name": "xl",
+          "size": "1.25rem",
+          "slug": "xl"
+        },
+        {
+          "name": "2xl",
+          "size": "1.5rem",
+          "slug": "2xl"
+        },
+        {
+          "name": "3xl",
+          "size": "1.875rem",
+          "slug": "3xl"
+        },
+        {
+          "name": "4xl",
+          "size": "2.25rem",
+          "slug": "4xl"
+        },
+        {
+          "name": "5xl",
+          "size": "3rem",
+          "slug": "5xl"
+        },
+        {
+          "name": "6xl",
+          "size": "3.75rem",
+          "slug": "6xl"
+        },
+        {
+          "name": "7xl",
+          "size": "4.5rem",
+          "slug": "7xl"
+        },
+        {
+          "name": "8xl",
+          "size": "6rem",
+          "slug": "8xl"
+        },
+        {
+          "name": "9xl",
+          "size": "8rem",
+          "slug": "9xl"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--sans)"
+    }
+  }
+}

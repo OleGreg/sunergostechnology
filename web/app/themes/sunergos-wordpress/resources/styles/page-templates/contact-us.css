@@ -1,0 +1,33 @@
+.contact-us-container {
+  @apply flex flex-row items-center justify-between mb-20;
+
+  .forminator-custom-form {
+    @apply text-twilightblue;
+
+    .forminator-label,
+    .forminator-input,
+    .forminator-textarea {
+      @apply !text-lg !bg-transparent !rounded-md;
+    }
+
+    .forminator-required {
+      @apply !text-honeyorange;
+    }
+
+    .forminator-textarea {
+      @apply !text-lg !rounded-md;
+    }
+
+    .forminator-error-message {
+      @apply !text-darklavender !text-lg !bg-transparent !pl-0;
+    }
+
+    .forminator-button-submit {
+      @apply bg-twilightblue transition-colors !rounded-md text-seashell !font-bold !text-lg;
+  
+      &:hover {
+        @apply bg-darklavender;
+      }
+    }
+  }
+}

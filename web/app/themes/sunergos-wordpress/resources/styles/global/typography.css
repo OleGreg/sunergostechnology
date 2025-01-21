@@ -1,0 +1,73 @@
+body {
+  @apply font-serif;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply leading-[125%] text-mediterraneanblue font-semibold;
+  }
+
+  h1 {
+    @apply text-5xl mb-7
+    max-md:text-4xl mb-5;
+  }
+
+  h2 {
+    @apply text-4xl mb-5
+    max-md:text-3xl max-md:mb-4;
+  }
+
+  h3 {
+    @apply text-3xl mb-4
+    max-md:text-2xl max-md:mb-3;
+  }
+
+  h4 {
+    @apply text-2xl mb-3
+    max-md:text-xl max-md:mb-2;
+  }
+
+  p,
+  a,
+  li,
+  span {
+    @apply text-lg text-twilightblue
+    max-md:text-base;
+  };
+
+  p {
+    @apply mb-2 leading-[175%];
+  }
+
+  .main {
+    ul {
+      @apply pl-8;
+  
+      li {
+        @apply list-disc mb-3;
+      }
+    }
+
+    a {
+      @apply font-bold underline hover:text-darklavender;
+    }  
+  }
+
+  table {
+    @apply text-twilightblue my-12;
+
+    th {
+      @apply text-2xl !text-center font-bold;
+    }
+
+    td {
+      @apply !py-8;
+    }
+
+    br {
+      content: "";
+      @apply block my-4;
+    }
+  }
+}

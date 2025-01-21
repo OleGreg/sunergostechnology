@@ -1,0 +1,25 @@
+.main {
+  .sunergos-cta {
+    @apply bg-[unset] flex flex-row text-xl font-bold items-center text-mediterraneanblue p-0 gap-x-2 relative leading-none mt-5 !no-underline;
+  
+    .arrow {
+      @apply transition-opacity;
+    }
+  
+    &:hover {
+      @apply text-twilightblue;
+  
+      .arrow {
+        @apply opacity-0;
+      }
+    }
+  
+    .hover-image {
+      @apply absolute w-[100%] -bottom-6 left-[calc(50%-12px)] -translate-x-1/2 -z-10 pointer-events-none;
+  
+      &.inactive {
+        @apply opacity-0;
+      }
+    }
+  }
+}

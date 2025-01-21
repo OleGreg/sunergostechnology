@@ -1,0 +1,52 @@
+.main {
+  .sunergos-footer-cta {
+    @apply flex flex-col;
+  
+    span {
+      @apply relative top-2 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-mediterraneanblue to-darklavender;
+    }
+  
+    a {
+      @apply flex flex-row text-5xl text-darklavender transition-colors items-center font-normal no-underline;
+  
+      .cta-arrow {
+        @apply relative;
+        animation-name: bounce;
+        animation-duration: 2s;
+        /* animation-timing-function: cubic-bezier(0.7, 0.7, .7, .7); */
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+  
+        path {
+          @apply transition-all;
+        }
+      }
+  
+      &:hover {
+        @apply text-mediterraneanblue;
+  
+        .cta-arrow {
+          path {
+            @apply stroke-mediterraneanblue;
+          }
+        }
+      }
+  
+  
+    }
+  }
+  
+  @keyframes bounce {
+    0% {
+      @apply left-3;
+    }
+  
+    50% {
+      @apply left-4;
+    }
+  
+    100% {
+      @apply left-3;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.hamburger {
+  @apply flex flex-col items-center justify-between h-6 cursor-pointer;
+
+  span {
+    &:nth-of-type(1),
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+      @apply h-[3px] w-8 bg-mediterraneanblue block rounded-md transition-all;
+    }
+  }
+
+  &.active {
+    span {
+      &:nth-of-type(2) {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+
+      &:nth-of-type(1) {
+        transform: rotate(-41deg);
+        transform-origin: 100%;
+      }
+
+      &:nth-of-type(3) {
+        transform: rotate(41deg);
+        transform-origin: 100%;
+      }
+    }
+  }
+}

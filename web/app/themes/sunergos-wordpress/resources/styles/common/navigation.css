@@ -1,0 +1,100 @@
+.nav-primary {
+  @apply relative 
+  max-lg:absolute max-lg:w-full max-lg:top-[100px] max-md:top-[86px] max-lg:left-0 max-lg:px-8 max-lg:z-10
+  max-lg:bg-seashell max-lg:py-12 max-lg:-translate-x-full max-lg:transition-transform
+  max-lg:border-t-2 max-lg:border-b-2 max-lg:border-mediterraneanblue;
+
+  &.active {
+    @apply translate-x-0;
+  }
+
+  .nav {
+    @apply flex flex-row gap-x-10
+    max-lg:flex-col max-lg:text-center max-lg:gap-y-8;
+
+    li {
+      @apply relative max-lg:flex max-lg:self-center max-lg:justify-center;
+
+      a {
+        @apply font-serif text-2xl text-mediterraneanblue transition-colors;
+
+        &:hover {
+          @apply text-twilightblue;
+        }
+      }
+
+      .sub-menu {
+        @apply lg:absolute lg:w-max lg:py-[20px] lg:px-10 lg:text-center lg:left-1/2 lg:-translate-x-1/2
+        lg:flex lg:flex-col lg:gap-y-3 lg:transition-opacity lg:opacity-0 lg:pointer-events-none
+        max-lg:relative max-lg:mt-4 max-lg:flex-col max-lg:gap-y-5 max-lg:hidden max-lg:w-0 max-lg:left-1/2
+        max-lg:top-1;
+
+        &.active {
+          @apply max-lg:flex;
+        }
+
+        li {
+          a {
+            @apply text-lg max-lg:text-center max-lg:whitespace-nowrap;
+          }
+        }
+      }
+
+      &:hover {
+        .sub-menu {
+          @apply lg:opacity-100 lg:pointer-events-auto;
+        }
+      }
+
+      .hover-image {
+        @apply absolute w-[125px] -bottom-4 left-1/2 -translate-x-1/2 -z-10 pointer-events-none
+        max-lg:hidden;
+
+        &.inactive {
+          @apply opacity-0;
+        }
+      }
+
+      &.menu-item-has-children {
+        @apply cursor-pointer relative max-lg:flex-col;
+
+        .submenu-dropdown {
+          @apply w-5 lg:hidden transition-transform absolute -right-10 top-2;
+
+          &.active {
+            @apply rotate-90;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-footer {
+  ul {
+    @apply flex flex-row gap-5 max-md:flex-col max-md:text-center;
+
+    a {
+      @apply text-mediterraneanblue transition-colors;
+
+      &:hover {
+        @apply text-darklavender;
+      }
+    }
+  }
+}
+
+.social-icons {
+  a {
+
+    path {
+      @apply transition-colors;
+    }
+
+    &:hover {
+      path {
+        @apply stroke-darklavender;
+      }
+    }
+  }
+}

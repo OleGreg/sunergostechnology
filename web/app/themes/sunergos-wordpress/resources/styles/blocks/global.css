@@ -1,0 +1,44 @@
+.desktop-only {
+  @apply max-md:hidden;
+}
+
+.mobile-only {
+  @apply md:hidden;
+}
+
+.wp-block-columns {
+  @apply container mb-20;
+
+  .wp-block-column {
+    &.align-center {
+      @apply flex flex-col justify-center;
+    }
+  }
+
+  &.extra-gap {
+    @apply max-md:gap-[75px];
+  }
+}
+
+.wp-block-group {
+  @apply container mb-20;
+}
+
+.wp-block-group-is-layout-grid {
+  img {
+    @apply mb-5;
+  }
+}
+
+.cta-with-image {
+  @apply max-md:flex-col-reverse;
+}
+
+.wp-block-column {
+  @apply max-md:!basis-auto;
+
+  svg,
+  img {
+    @apply max-md:self-center max-md:mx-auto;
+  }
+}
