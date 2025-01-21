@@ -26,13 +26,12 @@ jobs:
       working-directory: web/app/themes/sunergos-wordpress
       run: |
         # Install Node dependencies
-        npm install yarn
+        yarn install --production
         
         # Install PHP dependencies
         composer update
         composer install
         # Build theme assets
-        yarn
         yarn build
     # Sync files to the remote server
     - name: Sync
