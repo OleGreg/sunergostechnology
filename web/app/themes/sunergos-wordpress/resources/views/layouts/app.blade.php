@@ -21,6 +21,9 @@
         {!! get_field('schema_ld_json') !!}
       </script>
     @endif
+    @if(!empty(get_field('no_index')))
+      ​​<meta name="robots" content="noindex" />
+    @endif
     @php(do_action('get_header'))
     @php(wp_head())
   </head>
