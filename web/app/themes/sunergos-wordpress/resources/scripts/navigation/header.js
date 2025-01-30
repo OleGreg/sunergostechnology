@@ -1,4 +1,16 @@
 import cta_arrow_image from '../../images/cta_arrow.svg';
+import Headroom from "headroom.js";
+
+function initHeadroom() {
+  // select your header or whatever element you wish
+  const header = document.querySelector("header");
+  const options = {
+    offset : 100,
+    tolerance: 10
+  };
+  const headroom = new Headroom(header, options);
+  headroom.init();
+}
 
 function toggleMobileNav() {
   const hamburger = document.getElementById('hamburger');
@@ -38,4 +50,4 @@ function hideNavShadow() {
   });
 }
 
-export { toggleMobileNav, hideNavShadow, addSubmenuDropdown }
+export { toggleMobileNav, hideNavShadow, addSubmenuDropdown, initHeadroom }

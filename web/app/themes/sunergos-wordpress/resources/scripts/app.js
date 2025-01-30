@@ -1,6 +1,7 @@
 import domReady from '@roots/sage/client/dom-ready';
 import { initializeHoverImages } from './animations/animations.hover.image';
-import { addSubmenuDropdown, hideNavShadow, toggleMobileNav } from './helpers/header';
+import { addSubmenuDropdown, hideNavShadow, toggleMobileNav, initHeadroom } from './navigation/header';
+import { initCategoryButtons } from './navigation/blog.index';
 import { initializeAllSlideshows } from './slideshows/slideshow.services';
 
 /**
@@ -12,6 +13,8 @@ domReady(async () => {
   hideNavShadow();
   addSubmenuDropdown();
   initializeAllSlideshows();
+  initHeadroom();
+  initCategoryButtons();
 });
 
 /**

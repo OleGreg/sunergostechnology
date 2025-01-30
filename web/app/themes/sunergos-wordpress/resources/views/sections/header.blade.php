@@ -1,4 +1,4 @@
-<header class="banner py-6 mb-20 max-md:mb-10 shadow-md relative transition-shadow">
+<header class="banner py-6 bg-seashell shadow-md transition-all">
   <div class="container mx-auto flex flex-row items-center justify-between">
     <a class="brand font-serif" href="{{ home_url('/') }}" aria-label="Go to homepage">
       {{-- {!! $siteName !!} --}}
@@ -16,11 +16,5 @@
       <span></span>
       <span></span>
     </div>
-    <div class="breadcrumbs-container absolute -bottom-12">
-      {!! $sunergosBreadcrumbs !!}
-    </div>
   </div>
 </header>
-@if($sunergosBreadcrumbs)
-  <span class="py-5 w-full block"></span>
-@endif

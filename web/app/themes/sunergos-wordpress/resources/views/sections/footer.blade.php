@@ -24,7 +24,11 @@
       </div>
     </div>
     <div class="right-col copyright-column flex flex-row items-center gap-x-4">
-      <p class="text-mediterraneanblue">&copy;{{ date('Y') }} Sunergos Technology</p>
+      <div>
+        <a class="text-mediterraneanblue underline" href="tel:570-209-9198">(570) 209-9198</a>
+        <p class="text-mediterraneanblue mb-0">&copy;{{ date('Y') }} Sunergos Technology</p>
+        <p class="text-mediterraneanblue">Wellsboro, PA 16901</p>
+      </div>
       <img width="77px" height="auto" src="@asset('images/logo.svg')" alt="Sunergos Logo">
     </div>
   </div>

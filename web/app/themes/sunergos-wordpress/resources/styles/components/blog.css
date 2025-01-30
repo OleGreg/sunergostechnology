@@ -1,0 +1,41 @@
+/* Blog Category */
+
+.category-button {
+  @apply bg-twilightblue p-2 rounded-md transition-colors;
+
+  &:hover {
+    @apply bg-mediterraneanblue;
+  }
+
+  &.active {
+    @apply bg-lavender;
+
+    &:hover {
+      @apply bg-lavender;
+    }
+  }
+
+  span {
+    @apply text-seashell text-xl;
+  }
+}
+
+.post-category-label {
+  @apply text-seashell opacity-50 transition-opacity;
+
+  &.active {
+    @apply opacity-100;
+  }
+}
+
+.post-preview {
+  @apply hidden;
+
+  &.active {
+    @apply block;
+  }
+}
+
+/* Blog Single Page */
+
+

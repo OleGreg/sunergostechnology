@@ -3,6 +3,8 @@
 @import 'components/hamburger';
 @import 'components/slideshow';
 @import 'components/breadcrumbs';
+@import 'components/blog';
+@import 'sections/header';
 @import 'blocks/sunergos-footer-cta';
 @import 'blocks/global';
 @import 'global/typography';

@@ -8,9 +8,14 @@ body {
     @apply leading-[125%] text-mediterraneanblue font-semibold;
   }
 
-  h1 {
+  h1,
+  h1 span {
     @apply text-5xl mb-7
     max-md:text-4xl mb-5;
+  }
+
+  h1 span {
+    @apply text-darklavender;
   }
 
   h2 {
@@ -34,7 +39,11 @@ body {
   span {
     @apply text-lg text-twilightblue
     max-md:text-base;
-  };
+
+    &.large-paragraph {
+      @apply text-2xl max-md:text-xl text-twilightblue;
+    }
+  }
 
   p {
     @apply mb-2 leading-[175%];

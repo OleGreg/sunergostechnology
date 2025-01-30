@@ -1,0 +1,10 @@
+.banner {
+  @apply mb-20 max-md:mb-10;
+}
+
+.page-child,
+.single-post {
+  .banner {
+    @apply mb-0;
+  }
+}

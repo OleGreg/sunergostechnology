@@ -4347,14 +4347,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:1.0.30001570, caniuse-lite@npm:^1.0.30001565":
+"caniuse-lite@npm:1.0.30001570":
   version: 1.0.30001570
   resolution: "caniuse-lite@npm:1.0.30001570"
   checksum: 10c0/e47230d2016edea56e002fa462a5289f697b48dcfbf703fb01aecc6c98ad4ecaf945ab23c253cb7af056c2d05f266e4e4cbebf45132100e2c9367439cb95b95b
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001646, caniuse-lite@npm:^1.0.30001669, caniuse-lite@npm:^1.0.30001688":
+"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001565, caniuse-lite@npm:^1.0.30001646, caniuse-lite@npm:^1.0.30001669, caniuse-lite@npm:^1.0.30001688":
   version: 1.0.30001695
   resolution: "caniuse-lite@npm:1.0.30001695"
   checksum: 10c0/acf90a767051fdd8083711b3ff9f07a28149c55e394115d8f874f149aa4f130e6bc50cea1dd94fe03035b9ebbe13b64f446518a6d2e19f72650962bdff44b2c5
@@ -6253,6 +6253,13 @@ __metadata:
   dependencies:
     "@types/hast": "npm:^3.0.0"
   checksum: 10c0/b898bc9fe27884b272580d15260b6bbdabe239973a147e97fa98c45fa0ffec967a481aaa42291ec34fb56530dc2d484d473d7e2bae79f39c83f3762307edfea8
+  languageName: node
+  linkType: hard
+
+"headroom.js@npm:^0.12.0":
+  version: 0.12.0
+  resolution: "headroom.js@npm:0.12.0"
+  checksum: 10c0/1a9976145f3278598cfa866ba5cf21bafe77fbacc90acce9504ffe2da5d50e9f0e1f18f1a4a702ccae725194de312562879a8b440635c12eda6bf27c0f172dc5
   languageName: node
   linkType: hard
 
@@ -10130,6 +10137,7 @@ __metadata:
     "@roots/bud-tailwindcss": "npm:6.20.0"
     "@roots/sage": "npm:6.20.0"
     autoprefixer: "npm:^10.4.20"
+    headroom.js: "npm:^0.12.0"
     postcss: "npm:^8.4.49"
     postcss-loader: "npm:^8.1.1"
     postcss-preset-env: "npm:^10.1.3"
