@@ -27,6 +27,7 @@ function addSubmenuDropdown() {
     let submenu_dropdown = document.createElement('img');
     submenu_dropdown.classList.add('submenu-dropdown');
     submenu_dropdown.setAttribute('src', cta_arrow_image);
+    submenu_dropdown.setAttribute('alt', "");
     nav_item.appendChild(submenu_dropdown);
     submenu_dropdown.addEventListener('click', function() {
       this.classList.toggle('active');
