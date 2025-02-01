@@ -23,7 +23,7 @@
         @endif
       </div>
     </div>
-    <div class="right-col copyright-column flex flex-row items-center gap-x-4">
+    <div class="right-col copyright-column flex flex-row max-md:flex-col-reverse items-center gap-x-4 max-md:gap-y-7">
       <div>
         <a class="text-mediterraneanblue underline" href="tel:570-209-9198">(570) 209-9198</a>
         <p class="text-mediterraneanblue mb-0">&copy;{{ date('Y') }} Sunergos Technology</p>

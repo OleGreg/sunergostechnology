@@ -12,7 +12,7 @@
 
     {!! $categoryButtons !!}
 
-    <div class="posts-container grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 gap-5 my-14">
+    <div class="posts-container grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-5 my-14">
 
       @if (! have_posts())
         <x-alert type="warning">

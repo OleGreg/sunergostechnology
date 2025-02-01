@@ -4,7 +4,7 @@
   @apply bg-twilightblue p-2 rounded-md transition-colors;
 
   &:hover {
-    @apply bg-mediterraneanblue;
+    @apply lg:bg-mediterraneanblue;
   }
 
   &.active {
@@ -38,4 +38,25 @@
 
 /* Blog Single Page */
 
+.single-post {
+  .wp-block-group {
+    @apply mb-7;
+  }
+}
 
+.post-single-categories {
+  .post-category-label {
+    @apply text-twilightblue mt-[1px] mb-0 text-base;
+  }
+}
+
+.e-content {
+  p {
+    @apply mb-3;
+  }
+}
+
+.social-share-buttons {
+  @apply flex flex-row items-center gap-x-5 md:absolute md:right-8 md:top-0
+  max-md:justify-center max-md:mt-3 max-md:mb-11;
+}

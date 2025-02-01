@@ -122,15 +122,15 @@ class Post extends Composer
         foreach($categories_object as $key => $category_object) {
 
             if($key < $last_key) {
-                $category_element = '<span itemprop="about" itemscope itemtype="https://schema.org/Thing"><p data-category-id="' . $category_object->cat_ID .'" class="post-category-label active leading-[100%]" itemprop="name">' . $category_object->cat_name . '</p></span>';
+                $category_element = '<span itemprop="about" itemscope itemtype="https://schema.org/Thing"><p data-category-id="' . $category_object->cat_ID .'" class="post-category-label active leading-[100%] max-md:text-center" itemprop="name">' . $category_object->cat_name . '</p></span>';
                 $category_element .= '<p data-category-id="' . $category_object->cat_ID .'" class="post-category-label active leading-[100%] mr-1">,</p>';
             } else {
-                $category_element = '<span itemprop="about" itemscope itemtype="https://schema.org/Thing"><p data-category-id="' . $category_object->cat_ID .'" class="post-category-label active leading-[100%]" itemprop="name">' . $category_object->cat_name . '</p></span>';
+                $category_element = '<span itemprop="about" itemscope itemtype="https://schema.org/Thing"><p data-category-id="' . $category_object->cat_ID .'" class="post-category-label active leading-[100%] max-md:text-center" itemprop="name">' . $category_object->cat_name . '</p></span>';
             }
             $categories_html = $categories_html . $category_element;
         }
 
-        return '<div class="absolute top-0 right-0 bg-twilightblue px-4 pt-[10px] pb-1 flex flex-row items-center justify-center flex-wrap">' . $categories_html . '</div>';
+        return $categories_html;
     }
 
     /**

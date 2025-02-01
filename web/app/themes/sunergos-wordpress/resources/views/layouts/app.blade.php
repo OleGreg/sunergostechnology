@@ -24,6 +24,13 @@
     @if(get_field('no_index'))
       ​​<meta name="robots" content="noindex" />
     @endif
+    {{-- Facebook OG Metadata --}}
+    <meta property="og:title" content="{{ get_the_title() }} | Articles">
+    <meta property="og:description" content="{{ get_field('meta_description', get_the_ID()) }}">
+    <meta property="og:image" content="https://sunergostechnology.com/app/uploads/2025/01/blog_share.png">
+    <meta property="og:url" content="{{ get_permalink() }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sunergos Technology">
     @php(do_action('get_header'))
     @php(wp_head())
   </head>
@@ -42,7 +49,7 @@
 
       @include('sections.header')
 
-      @if($sunergosBreadcrumbs)
+      @if($sunergosBreadcrumbs && is_page())
         <div class="breadcrumbs-container container mx-auto relative py-5">
           {!! $sunergosBreadcrumbs !!}
         </div>

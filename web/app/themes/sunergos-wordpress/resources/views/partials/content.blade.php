@@ -1,7 +1,9 @@
-<article @php(post_class(['post-preview', 'active'])) itemscope itemtype="https://schema.org/BlogPosting">
+<article @php(post_class(['post-preview', 'active', 'max-md:mb-5'])) itemscope itemtype="https://schema.org/BlogPosting">
 
   <div class="relative pt-14 border-twilightblue border-2 mb-2">
-    {!! $postCategories !!}
+    <div class="absolute top-0 right-0 bg-twilightblue text- px-4 pt-[10px] pb-1 flex flex-row items-center justify-center flex-wrap">
+      {!! $postCategories !!}
+    </div>
     <img class="mb-2" src="{{ $imageUrl }}" alt="{{ $imageAlt }}" itemprop="image" />
   </div>
 
