@@ -29,3 +29,14 @@ add_filter('render_block', function ($block_content, $block) {
     }
     return $block_content;
 }, 10, 2);
+
+/**
+ * Remove Taxonomies and Users from Wordpress Sitemap
+ */
+
+ add_filter('wp_sitemaps_add_provider', function($provider, $name) {
+    if (in_array($name, ['taxonomies', 'users'])) {
+        return false; // Disable category and user sitemaps
+    }
+    return $provider;
+}, 10, 2);
