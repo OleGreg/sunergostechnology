@@ -56,7 +56,7 @@ class App extends Composer
 
     public function sunergosBreadcrumbs() {
         /* Change according to your needs */
-        $delimiter = '<span class="delimeter">»</span>';
+        $delimiter = '<li class="delimeter">»</li>';
     
         /* Don't change values below */
         global $post;

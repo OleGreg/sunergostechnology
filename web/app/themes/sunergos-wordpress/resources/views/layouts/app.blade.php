@@ -24,6 +24,9 @@
     @if(get_field('no_index'))
       ​​<meta name="robots" content="noindex" />
     @endif
+    @if(is_single())
+      <link rel="canonical" href="{{ get_permalink() }}">
+    @endif
     {{-- Facebook OG Metadata --}}
     <meta property="og:title" content="{{ get_the_title() }} | Articles">
     <meta property="og:description" content="{{ get_field('meta_description', get_the_ID()) }}">
