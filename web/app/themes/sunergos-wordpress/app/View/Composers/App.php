@@ -27,6 +27,7 @@ class App extends Composer
             'isFrontPage' => $this->isFrontPage(),
             'sunergosBreadcrumbs' => $this->sunergosBreadcrumbs(),
             'socialShareButtons' => $this->socialShareButtons(),
+            'schemaJSON' => $this->schemaJSON(),
         ];
     }
 
@@ -138,5 +139,154 @@ class App extends Composer
         $share_buttons .= '</div>';
 
         return $share_buttons;
-    }    
+    }
+
+    public function schemaJSON() {
+        if (!is_page() && !is_single()) {
+            return null; // Only generate schema for pages and posts
+        }
+    
+        global $post;
+    
+        // Get common metadata
+        $published_date = get_the_date('c', $post);
+        $modified_date = get_the_modified_date('c', $post);
+        $post_url = get_permalink($post);
+        $author_name = get_the_author();
+        $tags = get_the_tags($post->ID);
+        $keywords = $tags ? implode(", ", wp_list_pluck($tags, 'name')) : '';
+        $featured_image = get_the_post_thumbnail_url($post, 'full') ?: "https://sunergostechnology.com/app/uploads/2025/02/roses_growing.png";
+    
+        // Get Meta Title and Description ACF Fields
+        $post_title = get_field('meta_title', $post->ID) ?: get_the_title($post);
+        $post_description = get_field('meta_description', $post->ID) ?: wp_trim_words(strip_tags($post->post_content), 30);
+    
+        // Get Additional Schema (if any)
+        $additional_webpage_schema = get_field('additional_webpage_schema', $post->ID) ?: '';
+        $additional_local_business_schema = get_field('additional_local_business_schema', $post->ID) ?: '';
+    
+        // Publisher Data (used in WebPage schema)
+        $publisher_schema = '
+        {
+            "@type": "Organization",
+            "name": "Sunergos Technology",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://sunergostechnology.com/app/uploads/2025/01/logo_square_dimensions.png"
+            }
+        }';
+    
+        // Speakable Schema - CURRENTLY NOT IN USE
+        $speakable_schema = '
+        {
+            "@type": "SpeakableSpecification",
+            "xpath": ["/html/body/p[1]"]
+        }';
+    
+        // Local Business Schema
+        $local_business_schema = '
+        {
+            "@type": "LocalBusiness",
+            "name": "Sunergos Technology",
+            "url": "https://sunergostechnology.com",
+            "image": "https://sunergostechnology.com/app/uploads/2025/01/logo_square_dimensions.png",
+            "description": "Custom software development, digital marketing, and web solutions.",
+            "telephone": "+1-570-209-9198",
+            "email": "info@sunergostechnology.com",
+            "paymentAccepted": "Online Payments, Invoices",
+            "areaServed": { "@type": "Place", "name": "United States" },
+            "priceRange": "$$",
+            "foundingDate": "2024",
+            "founder": { "@type": "Person", "name": "Greg Crowell" },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "70 American Street",
+                "addressLocality": "Wellsboro",
+                "addressRegion": "PA",
+                "postalCode": "16901",
+                "addressCountry": "US"
+            },
+            "openingHours": "Mo-Fr 09:00-17:00",
+            "sameAs": [
+                "https://www.facebook.com/sunergostechnology",
+                "https://www.linkedin.com/company/sunergostechnology"
+            ]
+            ' . $additional_local_business_schema . '
+        }';
+    
+        // WebPage Schema
+        $webpage_schema = '
+        {
+            "@type": "WebPage",
+            "headline": "' . esc_js($post_title) . '",
+            "description": "' . esc_js($post_description) . '",
+            "datePublished": "' . $published_date . '",
+            "dateModified": "' . $modified_date . '",
+            "url": "' . $post_url . '",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "' . $post_url . '"
+            },
+            "isPartOf": { "@type": "WebSite", "name": "Sunergos Technology", "url": "https://sunergostechnology.com" },
+            "primaryImageOfPage": { "@type": "ImageObject", "url": "' . $featured_image . '" },
+            "author": {
+                "@type": "Person",
+                "name": "Greg Crowell"
+            },
+            "about": {
+                "@type": "LocalBusiness",
+                "@id": "https://sunergostechnology.com"
+            },
+            "significantLink": [
+                "https://sunergostechnology.com/services/",
+                "https://sunergostechnology.com/contact/"
+            ],
+            "publisher": ' . $publisher_schema . '
+            ' . $additional_webpage_schema . '
+        }';
+    
+        // BlogPosting Schema (Only for Posts)
+        $blog_posting_schema = '';
+        if (is_single()) {
+            $blog_posting_schema = ',
+            {
+                "@type": "BlogPosting",
+                "headline": "' . esc_js($post_title) . '",
+                "description": "' . esc_js($post_description) . '",
+                "datePublished": "' . $published_date . '",
+                "dateModified": "' . $modified_date . '",
+                "url": "' . $post_url . '",
+                "author": {
+                    "@type": "Person",
+                    "name": "' . esc_js($author_name) . '"
+                },
+                "publisher": ' . $publisher_schema . ',
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "' . $post_url . '"
+                },
+                "articleSection": "' . esc_js(get_the_category_list(", ")) . '",
+                "keywords": "' . esc_js($keywords) . '",
+                "wordCount": ' . str_word_count(strip_tags($post->post_content)) . ',
+                "speakable": ' . $speakable_schema . ',
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "' . $featured_image . '"
+                }
+            }';
+        }
+    
+        // Combine into @graph format
+        $json_ld = '
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                ' . $local_business_schema . ',
+                ' . $webpage_schema . '
+                ' . $blog_posting_schema . '
+            ]
+        }';
+    
+        return '<script type="application/ld+json">' . $json_ld . '</script>';
+    }
 }
