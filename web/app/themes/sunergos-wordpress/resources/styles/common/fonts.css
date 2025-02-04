@@ -1,25 +1,47 @@
-@font-face {
+/* @font-face {
   font-family: 'Cormorant';
   font-display: swap;
   font-style: normal;
   font-weight: 100 900;
   src: url('@fonts/Cormorant-VariableFont_wght.ttf') format('truetype');
-}
-/*
+} */
+ 
 @font-face {
+  font-family: 'Cochin';
   font-display: swap;
-  font-family: 'Asap';
   font-style: normal;
   font-weight: 400;
-  src: url('@fonts/Asap-VariableFont_wdth,wght.woff2') format('woff2');
+  src:
+    url('@fonts/CochinRoman/font.woff2') format('woff2'),
+    url('@fonts/CochinRoman/font.woff') format('woff');
 }
 
 @font-face {
+  font-family: 'Cochin';
   font-display: swap;
-  font-family: 'Asap';
-  font-style: italic;
-  font-weight: 400;
-  src: url('@fonts/Asap-Italic-VariableFont_wdth,wght.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url('@fonts/CochinBold/font.woff2') format('woff2'),
+    url('@fonts/CochinBold/font.woff') format('woff');
 }
 
-Cormorant-VariableFont_wght.ttf */
+@font-face {
+  font-family: 'Cochin';
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+  src:
+    url('@fonts/CochinItalic/font.woff2') format('woff2'),
+    url('@fonts/CochinItalic/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Cochin';
+  font-display: swap;
+  font-style: italic;
+  font-weight: 700;
+  src:
+    url('@fonts/CochinBoldItalic/font.woff2') format('woff2'),
+    url('@fonts/CochinBoldItalic/font.woff') format('woff');
+}

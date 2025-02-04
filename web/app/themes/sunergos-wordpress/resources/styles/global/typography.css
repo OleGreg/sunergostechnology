@@ -37,7 +37,7 @@ body {
   a,
   li,
   span {
-    @apply text-lg text-twilightblue
+    @apply text-xl text-twilightblue
     max-md:text-base;
 
     &.large-paragraph {

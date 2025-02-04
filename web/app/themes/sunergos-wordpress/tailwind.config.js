@@ -28,7 +28,7 @@ const config = {
       },
       fontFamily: {
         sans: 'sans-serif',
-        serif: '"Cormorant", serif',
+        serif: '"Cochin", serif',
       },
     },
   },
