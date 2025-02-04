@@ -1,6 +1,7 @@
 .main {
   .sunergos-cta {
-    @apply bg-[unset] flex flex-row text-xl font-bold items-center text-mediterraneanblue p-0 gap-x-2 relative leading-none mt-5 !no-underline;
+    @apply bg-[unset] flex flex-row text-xl font-bold items-center text-mediterraneanblue p-0 gap-x-2 relative leading-none mt-5 !no-underline
+    max-md:mt-2 max-md:text-lg;
   
     .arrow {
       @apply transition-opacity;

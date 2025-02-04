@@ -21,7 +21,8 @@
 }
 
 .wp-block-group {
-  @apply container mb-20;
+  @apply container mb-20
+  max-md:mb-16;
 
   &.service-hero-container {
     @apply max-md:mb-10;
