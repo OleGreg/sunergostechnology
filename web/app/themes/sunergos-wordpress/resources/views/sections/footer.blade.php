@@ -25,9 +25,9 @@
     </div>
     <div class="right-col copyright-column flex flex-row max-md:flex-col-reverse items-center gap-x-4 max-md:gap-y-7">
       <div class="flex flex-col gap-y-1">
-        <a class="text-mediterraneanblue underline" href="tel:570-209-9198">(570) 209-9198</a>
-        <p class="text-mediterraneanblue mb-0 leading-[125%]">&copy;{{ date('Y') }} Sunergos Technology</p>
-        <p class="text-mediterraneanblue mb-0 leading-[125%]">Wellsboro, PA 16901</p>
+        <p class="text-mediterraneanblue text-base mb-0 leading-[125%]">&copy;{{ date('Y') }} Sunergos Technology</p>
+        <p class="text-mediterraneanblue text-base mb-0 leading-[125%]">Wellsboro, PA 16901</p>
+        <a class="text-mediterraneanblue text-base leading-[125%]" href="tel:570-209-9198">(570) 209-9198</a>
       </div>
       <img width="77px" height="auto" src="@asset('images/logo.svg')" alt="Sunergos Logo">
     </div>
