@@ -30,6 +30,15 @@ add_filter('render_block', function ($block_content, $block) {
     return $block_content;
 }, 10, 2);
 
+//SITEMAP
+
+/**
+ * Always render sitemap, even in dev
+ */
+
+add_filter( 'wp_sitemaps_enabled', '__return_true' );
+
+
 /**
  * Remove Taxonomies and Users from Wordpress Sitemap
  */
@@ -45,19 +54,20 @@ add_filter('render_block', function ($block_content, $block) {
  * Remove pages tagged as noindex from Wordpress Sitemap 
  */ 
 
-// add_filter( 'wp_sitemaps_posts_query_args', function( $args, $post_type ) {
-//     if ( 'page' !== $post_type ) {
-//         return $args;
-//     }
+add_filter( 'wp_sitemaps_posts_query_args', function( $args, $post_type ) {
 
-//     // Query all pages except those with the ACF 'noindex' field set to true
-//     $args['meta_query'] = [
-//         [
-//             'key'     => 'no_index',
-//             'value'   => '1',  // Assuming the ACF field stores "1" for true
-//             'compare' => '!=', // Exclude pages with '1' (true)
-//         ]
-//     ];
+    // if ( 'page' !== $post_type ) {
+    //     return $args;
+    // }
 
-//     return $args;
-// }, 10, 2 );
+    // Query all pages except those with the ACF 'noindex' field set to true
+    $args['meta_query'] = [
+        [
+            'key'     => 'no_index',
+            'value'   => '1',  // Assuming the ACF field stores "1" for true
+            'compare' => 'NOT EXISTS', // Exclude pages with '1' (true)
+        ]
+    ];
+
+    return $args;
+}, 10, 2 );
