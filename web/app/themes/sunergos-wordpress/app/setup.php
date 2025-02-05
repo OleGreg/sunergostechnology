@@ -354,3 +354,15 @@ add_action( 'init', __NAMESPACE__ . '\\initialize_multimedia_design_slides' );
 }
 
 add_action( 'init', __NAMESPACE__ . '\\initialize_digital_marketing_slides' );
+
+/**
+ * Clear the sitemap cache
+ */
+
+add_action('init', function() {
+    function clear_sitemap_cache() {
+        if (function_exists('wp_sitemaps_get_server')) {
+            wp_sitemaps_get_server()->renderer->cache->invalidate('all');
+        }
+    }
+});
