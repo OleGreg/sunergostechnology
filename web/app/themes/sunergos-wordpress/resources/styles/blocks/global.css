@@ -47,3 +47,19 @@
     @apply max-md:self-center max-md:mx-auto;
   }
 }
+
+.service-breakdown-columns {
+  .wp-block-column {
+    @apply p-5 rounded-lg shadow-lg flex flex-col justify-center;
+
+    &:first-of-type {
+      @apply bg-twilightblue;
+
+      p,
+      li,
+      a {
+        @apply text-seashell;
+      }
+    }
+  }
+}
