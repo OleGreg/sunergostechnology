@@ -17,7 +17,7 @@
       <link rel="canonical" href="{{ get_permalink() }}">
     @endif
     {{-- Facebook OG Metadata --}}
-    <meta property="og:title" content="{{ get_the_title() }} | Articles">
+    <meta property="og:title" content="{{ get_the_title() }} | Sunergos Technology">
     <meta property="og:description" content="{{ get_field('meta_description', get_the_ID()) }}">
     <meta property="og:image" content="https://sunergostechnology.com/app/uploads/2025/01/blog_share.png">
     <meta property="og:url" content="{{ get_permalink() }}">
