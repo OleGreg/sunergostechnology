@@ -54,20 +54,15 @@ add_filter( 'wp_sitemaps_enabled', '__return_true' );
  * Remove pages tagged as noindex from Wordpress Sitemap 
  */ 
 
-add_filter( 'wp_sitemaps_posts_query_args', function( $args, $post_type ) {
+ add_filter('wp_sitemaps_posts_entry', function($sitemap_entry, $post) {
+    if (!$sitemap_entry || !is_object($post)) {
+        return $sitemap_entry; // Avoid breaking the sitemap
+    }
 
-    // if ( 'page' !== $post_type ) {
-    //     return $args;
-    // }
+    $no_index = get_field('no_index', $post->ID);
 
-    // Query all pages except those with the ACF 'noindex' field set to true
-    $args['meta_query'] = [
-        [
-            'key'     => 'no_index',
-            'value'   => '1',  // Assuming the ACF field stores "1" for true
-            'compare' => 'NOT EXISTS', // Exclude pages with '1' (true)
-        ]
-    ];
-
-    return $args;
-}, 10, 2 );
+    if ($no_index) {
+        return array(); // Exclude this post from the sitemap by returning an empty array
+    }
+    return $sitemap_entry;
+}, 10, 2);
