@@ -51,9 +51,12 @@ body {
 
   .main {
     h2,
-    h3,
-    h4 {
+    h3 {
       @apply mt-8;
+    }
+
+    h4 {
+      @apply mt-4;
     }
 
     ul {
