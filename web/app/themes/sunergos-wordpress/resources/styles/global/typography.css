@@ -65,6 +65,10 @@ body {
       li {
         @apply list-disc mb-3;
       }
+
+      &.horizontal-list {
+        @apply flex flex-row md:gap-x-10 justify-center flex-wrap;
+      }
     }
 
     a {

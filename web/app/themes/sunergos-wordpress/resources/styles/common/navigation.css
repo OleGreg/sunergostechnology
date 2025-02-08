@@ -43,8 +43,8 @@
       }
 
       .sub-menu {
-        @apply lg:absolute lg:w-max lg:py-[20px] lg:px-10 lg:text-center lg:left-1/2 lg:-translate-x-1/2
-        lg:flex lg:flex-col lg:gap-y-3 lg:transition-opacity lg:opacity-0 lg:pointer-events-none
+        @apply lg:absolute lg:w-max lg:py-[20px] lg:px-10 lg:text-center lg:left-1/2 lg:-translate-x-1/2 lg:rounded-md
+        lg:flex lg:flex-col lg:gap-y-3 lg:transition-opacity lg:opacity-0 lg:pointer-events-none lg:bg-seashell
         max-lg:relative max-lg:mt-4 max-lg:flex-col max-lg:gap-y-5 max-lg:hidden max-lg:w-0 max-lg:left-1/2
         max-lg:top-1;
 
@@ -66,7 +66,7 @@
       }
 
       .hover-image {
-        @apply absolute w-[125px] -bottom-4 left-1/2 -translate-x-1/2 -z-10 pointer-events-none
+        @apply absolute w-[125px] -bottom-4 left-1/2 -translate-x-1/2 z-10 pointer-events-none
         max-lg:hidden;
 
         &.inactive {

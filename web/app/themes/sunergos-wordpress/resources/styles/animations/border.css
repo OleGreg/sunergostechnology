@@ -1,0 +1,3 @@
+.animated-border {
+  @apply border border-mediterraneanblue rounded-lg;
+}

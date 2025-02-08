@@ -15,8 +15,20 @@
     }
   }
 
+  &.margin-top {
+    @apply mt-20;
+  }
+
   &.extra-gap {
     @apply max-md:gap-[75px];
+  }
+
+  &.no-padding {
+    @apply px-0;
+  }
+
+  &.no-margin {
+    @apply mb-0;
   }
 }
 
@@ -26,6 +38,14 @@
 
   &.service-hero-container {
     @apply max-md:mb-10;
+  }
+
+  &.no-margin {
+    @apply mb-0;
+  }
+
+  &.small-margin {
+    @apply mb-10;
   }
 }
 
@@ -60,6 +80,18 @@
       a {
         @apply text-seashell;
       }
+    }
+  }
+}
+
+.image-columns {
+  .wp-block-column {
+    img {
+      @apply mb-5;
+    }
+
+    p {
+      @apply text-2xl;
     }
   }
 }
