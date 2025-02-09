@@ -4,10 +4,10 @@
   <div class="container">
 
     <header class="h-[515px] max-md:h-auto flex flex-row max-md:flex-col items-center justify-center mb-3 max-md:mt-16">
-      <img width="200px" class="max-md:mb-5" src="{{ $imageUrl }}" alt="{{ $imageAlt }}" itemprop="image" />
+      <img width="200px" class="max-md:mb-5" src="{{ $imageUrl }}" alt="{{ $imageAlt }}" />
       <div class="w-[370px] max-md:w-[325px] flex flex-col items-center mb-3">
         <h1 class="text-center text-4xl mb-2">{!! $title !!}</h1>
-        <time class="dt-published text-twilightblue" datetime="{{ get_post_time('c', true) }}" itemprop="datePublished">
+        <time class="dt-published text-twilightblue" datetime="{{ get_post_time('c', true) }}">
           {{ get_the_date() }}
         </time>
         
@@ -18,7 +18,7 @@
         <p class="relative bottom-[3px]">
           <span class="text-base">
             {{ __('By', 'sage') }} 
-            <span class="text-base" itemprop="author">{{ get_the_author() }}</span>
+            <span class="text-base">{{ get_the_author() }}</span>
           </span>
           {{-- <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" class="p-author h-card">
             {{ get_the_author() }}
