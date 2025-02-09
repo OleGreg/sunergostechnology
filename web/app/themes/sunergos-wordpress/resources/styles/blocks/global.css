@@ -70,7 +70,7 @@
 
 .service-breakdown-columns {
   .wp-block-column {
-    @apply p-5 rounded-lg shadow-lg flex flex-col justify-center;
+    @apply py-7 px-5 rounded-lg shadow-lg flex flex-col justify-center;
 
     &:first-of-type {
       @apply bg-twilightblue;

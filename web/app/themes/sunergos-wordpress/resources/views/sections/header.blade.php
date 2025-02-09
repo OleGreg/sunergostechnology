@@ -1,8 +1,8 @@
-<header class="banner py-6 bg-seashell shadow-md transition-all">
+<header class="banner py-6 max-md:py-2 bg-seashell shadow-md transition-all">
   <div class="container mx-auto flex flex-row items-center justify-between">
     <a class="brand font-serif" href="{{ home_url('/') }}" aria-label="Go to homepage">
       {{-- {!! $siteName !!} --}}
-      <img width="287px" height="55px" class="max-md:w-[200px]" src="@asset('images/header_brand.svg')" alt="Sunergos">
+      <img width="287px" height="55px" class="max-md:w-[175px]" src="@asset('images/header_brand.svg')" alt="Sunergos">
     </a>
   
     @if (has_nav_menu('primary_navigation'))

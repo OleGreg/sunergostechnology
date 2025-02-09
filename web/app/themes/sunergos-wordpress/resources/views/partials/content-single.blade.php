@@ -6,7 +6,7 @@
     <header class="h-[515px] max-md:h-auto flex flex-row max-md:flex-col items-center justify-center mb-3 max-md:mt-16">
       <img width="200px" class="max-md:mb-5" src="{{ $imageUrl }}" alt="{{ $imageAlt }}" itemprop="image" />
       <div class="w-[370px] max-md:w-[325px] flex flex-col items-center mb-3">
-        <h1 class="text-center text-4xl max-md:mb-2">{!! $title !!}</h1>
+        <h1 class="text-center text-4xl mb-2">{!! $title !!}</h1>
         <time class="dt-published text-twilightblue" datetime="{{ get_post_time('c', true) }}" itemprop="datePublished">
           {{ get_the_date() }}
         </time>

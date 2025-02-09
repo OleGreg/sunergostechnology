@@ -19,7 +19,7 @@
 
 .nav-primary {
   @apply relative 
-  max-lg:absolute max-lg:w-full max-lg:top-[100px] max-md:top-[86px] max-lg:left-0 max-lg:px-8 max-lg:z-10
+  max-lg:absolute max-lg:w-full max-lg:top-[100px] max-md:top-[50px] max-lg:left-0 max-lg:px-8 max-lg:z-10
   max-lg:bg-seashell max-lg:py-12 max-lg:-translate-x-full max-lg:transition-transform
   max-lg:border-t-2 max-lg:border-b-2 max-lg:border-mediterraneanblue;
 

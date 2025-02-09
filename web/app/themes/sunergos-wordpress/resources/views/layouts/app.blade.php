@@ -17,12 +17,26 @@
       <link rel="canonical" href="{{ get_permalink() }}">
     @endif
     {{-- Facebook OG Metadata --}}
+    @if(is_single())
+    <meta property="og:title" content="{{ get_the_title() }} | Articles">
+    @else
     <meta property="og:title" content="{{ get_the_title() }} | Sunergos Technology">
+    @endif
     <meta property="og:description" content="{{ get_field('meta_description', get_the_ID()) }}">
     <meta property="og:image" content="https://sunergostechnology.com/app/uploads/2025/01/blog_share.png">
     <meta property="og:url" content="{{ get_permalink() }}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Sunergos Technology">
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@SunergosTech" />
+    @if(is_single())
+    <meta name="twitter:title" content="{{ get_the_title() }} | Articles" />
+    @else
+    <meta name="twitter:title" content="{{ get_the_title() }} | Sunergos Technology" />
+    @endif
+    <meta name="twitter:description" content="{{ get_field('meta_description', get_the_ID()) }}" />
+    <meta name="twitter:image" content="https://sunergostechnology.com/app/uploads/2025/01/blog_share.png" />
     @php(do_action('get_header'))
     @php(wp_head())
   </head>

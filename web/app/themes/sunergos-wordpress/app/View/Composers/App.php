@@ -218,8 +218,8 @@ class App extends Composer
         $webpage_schema = '
         {
             "@type": "WebPage",
-            "headline": "' . esc_js($post_title) . '",
-            "description": "' . esc_js($post_description) . '",
+            "headline": "' . $post_title . '",
+            "description": "' . $post_description . '",
             "datePublished": "' . $published_date . '",
             "dateModified": "' . $modified_date . '",
             "url": "' . $post_url . '",
@@ -251,24 +251,23 @@ class App extends Composer
             $blog_posting_schema = ',
             {
                 "@type": "BlogPosting",
-                "headline": "' . esc_js($post_title) . '",
-                "description": "' . esc_js($post_description) . '",
+                "headline": "' . $post_title . '",
+                "description": "' . $post_description . '",
                 "datePublished": "' . $published_date . '",
                 "dateModified": "' . $modified_date . '",
                 "url": "' . $post_url . '",
                 "author": {
                     "@type": "Person",
-                    "name": "' . esc_js($author_name) . '"
+                    "name": "' . $author_name . '"
                 },
                 "publisher": ' . $publisher_schema . ',
                 "mainEntityOfPage": {
                     "@type": "WebPage",
                     "@id": "' . $post_url . '"
                 },
-                "articleSection": "' . esc_js(get_the_category_list(", ")) . '",
-                "keywords": "' . esc_js($keywords) . '",
+                "articleSection": ["' . implode("\", \"", wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))) . '"],
+                "keywords": "' . $keywords . '",
                 "wordCount": ' . str_word_count(strip_tags($post->post_content)) . ',
-                "speakable": ' . $speakable_schema . ',
                 "image": {
                     "@type": "ImageObject",
                     "url": "' . $featured_image . '"
