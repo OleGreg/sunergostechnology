@@ -60,7 +60,7 @@ body {
     }
 
     ul {
-      @apply pl-8;
+      @apply pl-3 max-md:pl-3;
   
       li {
         @apply list-disc mb-3;

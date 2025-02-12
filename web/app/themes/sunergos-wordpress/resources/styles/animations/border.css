@@ -1,3 +1,7 @@
 .animated-border {
-  @apply border border-mediterraneanblue rounded-lg;
+  @apply border border-mediterraneanblue rounded-lg flex flex-col;
+
+  p:last-of-type {
+    @apply mt-auto;
+  }
 }

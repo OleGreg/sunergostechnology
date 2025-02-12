@@ -147,7 +147,7 @@ class App extends Composer
         }
     
         global $post;
-    
+
         // Get common metadata
         $published_date = get_the_date('c', $post);
         $modified_date = get_the_modified_date('c', $post);
