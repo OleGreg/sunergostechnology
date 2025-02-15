@@ -1,0 +1,7 @@
+.appointment-scheduler-container {
+  @apply max-md:!px-0;
+}
+
+.appointment-scheduler {
+  @apply bg-white rounded-lg shadow-lg h-[733px] max-lg:h-[750px] max-md:h-[1250px] max-sm:h-[1375px];
+}
