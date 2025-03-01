@@ -1,0 +1,7 @@
+.software-development,
+.digital-marketing,
+.multimedia-design {
+  h2 {
+    @apply text-3xl;
+  }
+}

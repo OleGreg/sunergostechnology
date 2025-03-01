@@ -55,7 +55,9 @@
     "wpackagist-plugin/forminator": "*",
     "wpackagist-plugin/mailgun": "*",
     "wpackagist-plugin/simple-custom-post-order": "*",
-    "wpackagist-plugin/plausible-analytics": "*"
+    "wpackagist-plugin/plausible-analytics": "*",
+    "wpackagist-plugin/the-events-calendar": "*",
+    "wpackagist-plugin/event-tickets": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",

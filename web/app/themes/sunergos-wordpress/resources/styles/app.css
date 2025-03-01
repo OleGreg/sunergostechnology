@@ -5,13 +5,14 @@
 @import 'components/slideshow';
 @import 'components/breadcrumbs';
 @import 'components/blog';
-@import 'components/appointment-scheduler.css';
+@import 'components/appointment-scheduler';
 @import 'sections/header';
 @import 'blocks/sunergos-footer-cta';
 @import 'blocks/global';
 @import 'global/typography';
 @import 'global/button';
-@import 'page-templates/contact-us.css';
+@import 'page-templates/contact-us';
+@import 'page-templates/services';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
