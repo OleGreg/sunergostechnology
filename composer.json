@@ -57,7 +57,7 @@
     "wpackagist-plugin/simple-custom-post-order": "*",
     "wpackagist-plugin/plausible-analytics": "*",
     "wpackagist-plugin/the-events-calendar": "*",
-    "wpackagist-plugin/event-tickets": "*"
+    "wpackagist-plugin/wp-optimize": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
